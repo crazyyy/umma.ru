@@ -21,3 +21,8 @@ if (typeof jQuery === 'undefined') {
   console.log('jQuery has loaded');
 }
 // Place any jQuery/helper plugins in here.
+
+$(function() {
+  var height = $('.container--main').height();
+  $('aside.sidebar').height(height);
+});
