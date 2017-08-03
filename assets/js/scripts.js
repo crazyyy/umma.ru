@@ -25,4 +25,36 @@ if (typeof jQuery === 'undefined') {
 $(function() {
   var height = $('.container--main').height();
   $('aside.sidebar').height(height);
+
+  $('.hardis--title span').on('click', function(e) {
+    if (!$(this).hasClass('hardis--title-a')) {
+      $('.hardis--title-a').removeClass('hardis--title-a');
+      $(this).addClass('hardis--title-a');
+      $('.hardis-content--item-a').fadeOut('fast');
+      $('.hardis-content--item').each(function(index, el) {
+        if ($(this).hasClass('hardis-content--item-a')) {
+          $(this).removeClass('hardis-content--item-a')
+        } else {
+          $(this).addClass('hardis-content--item-a')
+          $(this).fadeIn('fast');
+        }
+      });
+    }
+  })
+
+  $('.featured-video--desshort').on('click', function(e) {
+    $(this).fadeOut('fast', function() {
+      $('.featured-video--desfull').fadeIn('fast');
+    });
+  })
+  $('.featured-video--desfull').on('click', function(e) {
+    $(this).fadeOut('fast', function() {
+      $('.featured-video--desshort').fadeIn('fast');
+    });
+  })
+
+  $('.widget--asidenav a').click(function(){
+    console.log(this)
+  })
+
 });
