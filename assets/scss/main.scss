@@ -113,8 +113,8 @@ header {
 }
 nav {
   ul {
-    @extend .justify-child;
     @extend .clearfix;
+    @extend .justify-child;
     li {
       display: inline-block;
     }
@@ -124,6 +124,8 @@ nav {
   }
 }
 .sidebar {
+  padding-bottom: 15px;
+
   background-image: url('../img/bg/aside-bg.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -186,7 +188,9 @@ nav {
 
       transition: $base-transition;
       &:before {
-        font-family: 'Linearicons-Free';
+        font-family: 'Linearicons';
+        font-size: 24px;
+        line-height: 1.4;
 
         position: absolute;
         top: 50%;
@@ -199,13 +203,116 @@ nav {
 
         text-align: center;
 
-        background-color: red;
-
         @extend .dblock;
       }
       &.ico-koran-254 {
         &:before {
-          background-color: transparent;
+          content: '\e712';
+        }
+      }
+      &.ico-khadis-286 {
+        &:before {
+          content: '\e715';
+        }
+      }
+      &.ico-namaz-252 {
+        &:before {
+          content: '\e722';
+        }
+      }
+      &.ico-zakat-246 {
+        &:before {
+          content: '\e75e';
+        }
+      }
+      &.ico-uraza-255 {
+        &:before {
+          content: '\e684';
+        }
+      }
+      &.ico-kurban-249 {
+        &:before {
+          content: '\e81e';
+        }
+      }
+      &.ico-khadj-260 {
+        &:before {
+          content: '\e875';
+        }
+      }
+      &.ico-dua-245 {
+        &:before {
+          content: '\e8ca';
+        }
+      }
+      &.ico-audio-241 {
+        &:before {
+          content: '\e6e7';
+        }
+      }
+      &.ico-video-244 {
+        &:before {
+          content: '\e6ff';
+        }
+      }
+      &.ico-fetvy-h259 {
+        &:before {
+          content: '\e6da';
+        }
+      }
+      &.ico-muhammad-251 {
+        &:before {
+          content: '\e807';
+        }
+      }
+      &.ico-mir-250 {
+        &:before {
+          content: '\e68c';
+        }
+      }
+      &.ico-bogoslovie-242 {
+        &:before {
+          content: '\e884';
+        }
+      }
+      &.ico-economica-261 {
+        &:before {
+          content: '\e7fb';
+        }
+      }
+      &.ico-samorazvitie-256 {
+        &:before {
+          content: '\e876';
+        }
+      }
+      &.ico-about-253 {
+        &:before {
+          content: '\e723';
+        }
+      }
+      &.ico-book-248 {
+        &:before {
+          content: '\e714';
+        }
+      }
+      &.ico-ahyrat-243 {
+        &:before {
+          content: '\e70b';
+        }
+      }
+      &.ico-death-258 {
+        &:before {
+          content: '\e8a1';
+        }
+      }
+      &.ico-isskusstvo-247 {
+        &:before {
+          content: '\e626';
+        }
+      }
+      &.ico-sex-257 {
+        &:before {
+          content: '\e733';
         }
       }
       a {
@@ -213,22 +320,67 @@ nav {
 
         padding: 20px 35px 20px 60px;
 
+        cursor: pointer;
         text-decoration: none;
-cursor: pointer;
+
         color: $gray-medium;
       }
       .sub-menu {
         position: absolute;
         z-index: 8;
         top: 0;
-        right: -100%;
+        right: -230px;
 
         display: none;
 
-        border: 1px solid green;
+        width: 230px;
+
+        background-image: url('../img/bg/aside-bg.png');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .75);
+        li {
+          position: relative;
+          &:after {
+            position: absolute;
+            right: 15px;
+            bottom: 0;
+            left: 15px;
+
+            height: 1px;
+
+            background-color: $gray-light;
+
+            @extend .dblock;
+          }
+          // &:first-child {
+          //   border-left: 1px solid $gray-light;
+          // }
+          &:last-child {
+            &:after {
+              display: none;
+            }
+          }
+          a {
+            padding: 20px;
+          }
+        }
       }
       &:hover {
         background: #a7c1e6;
+        box-shadow: 2px 2px 5px 0 rgba(50, 50, 50, .75);
+        .sub-menu {
+          display: block;
+          li {
+            &:after {
+              background-color: transparent;
+            }
+            a {
+              padding: 20px;
+            }
+          }
+        }
       }
     }
   }
@@ -939,6 +1091,53 @@ footer {
 
 @import 'fonts/font_fontawesome';
 @import 'fonts/myriadsetpro';
-// @import 'fonts/linearicons';
+@import 'fonts/linearicons';
+@import 'fonts/hinted-Linearicons';
 @import 'base64';
 @import 'import/print';
+
+@media (max-width: 1198px) {
+  .popular-content .popular-content--item {
+    width: 100%;
+  }
+  .popular-content .popular-content--item .popular-content--img img {
+    width: 100%;
+  }
+  .hardis .hardis--title span {
+    font-size: 14px;
+    line-height: 2.8;
+  }
+  .hardis .hardis-content .hardis-content--item .hardis-numbers {
+    width: 100%;
+    height: 90px;
+  }
+  .hardis .hardis-content .hardis-content--item .hardis-numbers .hardis--rednumber {
+    top: 20px;
+    left: 75px;
+  }
+  .featured-video--descr .featured-video--title {
+    font-size: 22px;
+
+    padding: 0;
+
+    background: none;
+  }
+  .featured-video--descr {
+    width: 100%;
+    height: 214px;
+    iframe {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+@media (max-width: 991px) {
+.featured-video--descr {
+  width: 100%;
+  height: auto;
+  iframe {
+    position: relative;
+    min-height: 380px;
+  }
+}
+}

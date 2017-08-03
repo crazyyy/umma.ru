@@ -23,8 +23,11 @@ if (typeof jQuery === 'undefined') {
 // Place any jQuery/helper plugins in here.
 
 $(function() {
-  var height = $('.container--main').height();
-  $('aside.sidebar').height(height);
+  var windowWidth = $(window).width();
+  if (windowWidth > 974) {
+    var height = $('.container--main').height();
+    $('aside.sidebar').css('min-height', height + 'px');
+  }
 
   $('.hardis--title span').on('click', function(e) {
     if (!$(this).hasClass('hardis--title-a')) {
@@ -53,8 +56,20 @@ $(function() {
     });
   })
 
-  $('.widget--asidenav a').click(function(){
+  $('.widget--asidenav a').click(function() {
     console.log(this)
   })
 
+});
+
+$(window).resize(function(event) {
+  /* Act on the event */
+  console.log($(window).width())
+  var windowWidth = $(window).width();
+  if (windowWidth > 974) {
+    var height = $('.container--main').height();
+    $('aside.sidebar').css('min-height', height + 'px');
+  } else {
+    $('aside.sidebar').css('min-height', '0px');
+  }
 });
